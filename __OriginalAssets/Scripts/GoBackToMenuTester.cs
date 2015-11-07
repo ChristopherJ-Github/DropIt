@@ -7,6 +7,7 @@ public class GoBackToMenuTester : MonoBehaviour
     {
 	    if (Input.GetKeyDown(KeyCode.M))
         {
+            Destroy(PlayerManager.instance.currentCharacter);
             Application.LoadLevel("Menu");
             LevelRandomizer.instance.SwitchToWaitingToRandomize();
         }

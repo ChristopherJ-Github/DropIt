@@ -90,9 +90,9 @@ public class LevelRandomizer : MonoBehaviour
 
     void ApplyLevel ()
     {
-        Player.instance.SetCharacter(character);
-        Player.instance.dropable = dropable;
         Application.LoadLevel(planet.sceneName);
+        PlayerManager.instance.SetCharacter(character);
+        PlayerManager.instance.dropable = dropable;
         SwitchToGameplay ();
         Debug.Log("level applied");
     }

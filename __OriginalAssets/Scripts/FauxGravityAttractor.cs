@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FauxGravityAttractor : MonoBehaviour
+public class FauxGravityAttractor : Singleton<FauxGravityAttractor>
 {
     public float gravity;
 
