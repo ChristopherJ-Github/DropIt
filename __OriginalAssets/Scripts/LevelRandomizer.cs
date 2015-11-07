@@ -4,10 +4,13 @@ using System.Collections;
 public class LevelRandomizer : MonoBehaviour
 {
     public static LevelRandomizer instance;
+    public enum State {menu, gameplay};
+    private State state; 
 
 	void Start ()
     {
         InitializeInstance();
+        state = State.menu;
 	}
 
     void InitializeInstance ()
@@ -25,7 +28,10 @@ public class LevelRandomizer : MonoBehaviour
 
 	void Update ()
     {
-        GetInput();
+        if (state == State.menu)
+        {
+            GetInput();
+        }
 	}
 
     void GetInput ()
@@ -69,6 +75,7 @@ public class LevelRandomizer : MonoBehaviour
         Player.instance.SetCharacter(character);
         Player.instance.dropable = dropable;
         Application.LoadLevel(planet.sceneName);
+        state = State.gameplay;
         Debug.Log("level applied");
     }
 }
