@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController :GameObjectSingleton<PlayerController>
+public class PlayerController : MonoBehaviour
 {
     private Rigidbody _rigidBody;
 
     void Start ()
     {
-        base.Start();
         _rigidBody = GetComponent<Rigidbody>();
     }
 

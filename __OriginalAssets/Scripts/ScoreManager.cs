@@ -12,12 +12,12 @@ public class ScoreManager : MonoBehaviour
             GameManager gameManager = GameManager.instance;
             if (value >= gameManager.goalScore)
             {
-                score = gameManager.goalScore;
+                _score = gameManager.goalScore;
                 gameManager.EndLevel(this);
             } 
             else
             {
-                score = value;
+                _score = value;
             }
         }
     }

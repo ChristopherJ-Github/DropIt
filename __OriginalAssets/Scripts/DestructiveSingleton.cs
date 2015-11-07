@@ -6,13 +6,15 @@
 ///it'll be destroyed. base.Start () needs to be called in the
 ///child's Start () if it's used.
 /// </summary>
-public class GameObjectSingleton<T> : MonoBehaviour where T : MonoBehaviour
+public class DestructiveSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     public void Start()
     {
+        T type = instance; //initialize if nothing else calls it
         RemoveDuplicates();
     }
 
+    public static DestructiveSingleton<T> instanceParent;
     private static T _instance;
     public static T instance
     {
@@ -21,20 +23,20 @@ public class GameObjectSingleton<T> : MonoBehaviour where T : MonoBehaviour
             if (_instance == null)
             {
                 _instance = (T)FindObjectOfType(typeof(T));
+                if (_instance != null)
+                {
+                    DestructiveSingleton<T> destructiveSingleton = _instance as DestructiveSingleton<T>;
+                    instanceParent = destructiveSingleton;
+                    DontDestroyOnLoad(_instance.gameObject);
+                }
             }
-            DontDestroyOnLoad(_instance.gameObject);
             return _instance;
-        }
-        set
-        {
-            _instance = value;
-            DontDestroyOnLoad(_instance.gameObject);
         }
     }
 
     void RemoveDuplicates()
     {
-        if (_instance != null)
+        if (_instance != null && instanceParent != this)
         {
             Destroy(gameObject);
         }

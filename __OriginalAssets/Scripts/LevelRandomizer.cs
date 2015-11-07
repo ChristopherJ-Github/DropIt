@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LevelRandomizer : GameObjectSingleton<LevelRandomizer>
+public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
 {
     public delegate void StateHandler();
     private StateHandler State;
