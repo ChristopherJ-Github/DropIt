@@ -1,27 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : GameObjectSingleton<PlayerManager>
 {
-    void Start()
-    {
-        InitializeInstance();
-    }
-
-    public static PlayerManager instance;
-
-    void InitializeInstance()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-            instance = this;
-        }
-    }
 
     [HideInInspector] public GameObject currentCharacter;
     private bool spawnCharacter;

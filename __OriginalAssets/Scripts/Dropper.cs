@@ -5,8 +5,8 @@ public class Dropper : MonoBehaviour
 {
     GameObject dropable;
 
-	void Start () {
-
+	void Start ()
+    {
         dropable = PlayerManager.instance.dropable.prefab;
 	}
 	

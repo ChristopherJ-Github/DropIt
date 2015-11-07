@@ -1,30 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LevelRandomizer : MonoBehaviour
+public class LevelRandomizer : GameObjectSingleton<LevelRandomizer>
 {
-    public static LevelRandomizer instance;
     public delegate void StateHandler();
     private StateHandler State;
 
 	void Start ()
     {
-        InitializeInstance();
+        base.Start();
         SwitchToWaitingToRandomize();
 	}
-
-    void InitializeInstance ()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-            instance = this;
-        }
-    }
 
     public void SwitchToWaitingToRandomize()
     {
