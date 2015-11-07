@@ -4,13 +4,13 @@ using System.Collections;
 public class LevelRandomizer : MonoBehaviour
 {
     public static LevelRandomizer instance;
-    public enum State {menu, gameplay};
-    private State state; 
+    public delegate void StateHandler();
+    private StateHandler State;
 
 	void Start ()
     {
         InitializeInstance();
-        state = State.menu;
+        SwitchToWaitingToRandomize();
 	}
 
     void InitializeInstance ()
@@ -24,25 +24,25 @@ public class LevelRandomizer : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             instance = this;
         }
-    } 
+    }
 
-	void Update ()
+    public void SwitchToWaitingToRandomize()
     {
-        if (state == State.menu)
-        {
-            GetInput();
-        }
+        //show blank slots
+        State = WaitingToRandomize;
+    }
+
+    void Update ()
+    {
+        State();
 	}
 
-    void GetInput ()
+    void WaitingToRandomize()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             RandomizeLevel();
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            ApplyLevel();
+            SwitchToWaitingToApply();
         }
     }
 
@@ -53,7 +53,7 @@ public class LevelRandomizer : MonoBehaviour
     private Dropable dropable;
     private Planet planet;
 
-    void RandomizeLevel ()
+    void RandomizeLevel()
     {
         int characterIndex = Random.Range(0, characters.Length);
         character = characters[characterIndex];
@@ -65,9 +65,27 @@ public class LevelRandomizer : MonoBehaviour
         Debug.Log("level randomized: " + character.name + ", " + dropable.name + ", " + planet.name);
     }
 
-    void UpdateUISlots ()
+    void UpdateUISlots()
     {
 
+    }
+
+    void SwitchToWaitingToApply ()
+    {
+        State = WaitingToApply;
+        //show ui button
+    }
+
+    void WaitingToApply ()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            ApplyLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            RandomizeLevel();
+        }
     }
 
     void ApplyLevel ()
@@ -75,12 +93,14 @@ public class LevelRandomizer : MonoBehaviour
         Player.instance.SetCharacter(character);
         Player.instance.dropable = dropable;
         Application.LoadLevel(planet.sceneName);
-        state = State.gameplay;
+        SwitchToGameplay ();
         Debug.Log("level applied");
     }
 
-    public void SwitchToMenuState ()
+    void SwitchToGameplay ()
     {
-        state = State.menu;
+        State = GamePlay;
     }
+
+    void GamePlay () { }
 }

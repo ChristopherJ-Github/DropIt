@@ -8,7 +8,7 @@ public class GoBackToMenuTester : MonoBehaviour
 	    if (Input.GetKeyDown(KeyCode.M))
         {
             Application.LoadLevel("Menu");
-            LevelRandomizer.instance.SwitchToMenuState();
+            LevelRandomizer.instance.SwitchToWaitingToRandomize();
         }
 	}
 }
