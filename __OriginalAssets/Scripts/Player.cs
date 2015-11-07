@@ -36,5 +36,5 @@ public class Player : MonoBehaviour
         currentCharacter.transform.localPosition = Vector3.zero;
     }
 
-    [HideInInspector] public Dropable dropable;
+    public Dropable dropable;
 }
