@@ -78,4 +78,9 @@ public class LevelRandomizer : MonoBehaviour
         state = State.gameplay;
         Debug.Log("level applied");
     }
+
+    public void SwitchToMenuState ()
+    {
+        state = State.menu;
+    }
 }
