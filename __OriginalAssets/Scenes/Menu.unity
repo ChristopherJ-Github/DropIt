@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c426745d7755ce4e9d3704c74e3dfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLimit: 20
   goalScore: 0
 --- !u!4 &768935094
 Transform:

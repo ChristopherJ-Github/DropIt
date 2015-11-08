@@ -4,6 +4,7 @@ using System.Collections;
 public class FauxGravityBody : MonoBehaviour
 {
     private Rigidbody _rigidbody;
+    public bool attract = true;
 
 	void Start ()
     {
@@ -14,6 +15,6 @@ public class FauxGravityBody : MonoBehaviour
 	
 	void FixedUpdate ()
     {
-        FauxGravityAttractor.instance.Attract(transform, _rigidbody);
+        FauxGravityAttractor.instance.Attract(transform, _rigidbody, attract);
 	}
 }

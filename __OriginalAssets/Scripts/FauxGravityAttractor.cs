@@ -5,12 +5,15 @@ public class FauxGravityAttractor : Singleton<FauxGravityAttractor>
 {
     public float gravity;
 
-    public void Attract(Transform body, Rigidbody _rigibody)
+    public void Attract (Transform _transform, Rigidbody _rigibody, bool attract = true)
     {
-        Vector3 gravityUp = (body.position - transform.position).normalized;
-        Vector4 bodyUp = body.up;
-        _rigibody.AddForce(gravityUp * -gravity);
-        Quaternion targetRotation = Quaternion.FromToRotation(bodyUp, gravityUp) * body.rotation;
-        body.rotation = Quaternion.Slerp(body.rotation, targetRotation, 50 * Time.deltaTime);
+        Vector3 gravityUp = (_transform.position - transform.position).normalized;
+        Vector4 bodyUp = _transform.up;
+        if (attract)
+        {
+            _rigibody.AddForce(gravityUp * -gravity);
+        }
+        Quaternion targetRotation = Quaternion.FromToRotation(bodyUp, gravityUp) * _transform.rotation;
+        _transform.rotation = Quaternion.Slerp(_transform.rotation, targetRotation, 50 * Time.deltaTime);
     }
 }

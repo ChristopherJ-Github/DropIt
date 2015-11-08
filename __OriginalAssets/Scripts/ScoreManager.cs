@@ -10,10 +10,11 @@ public class ScoreManager : MonoBehaviour
         set
         {
             GameManager gameManager = GameManager.instance;
+            Debug.Log("score: " + value + ", goalScore: " + gameManager.goalScore);
             if (value >= gameManager.goalScore)
             {
                 _score = gameManager.goalScore;
-                gameManager.EndLevel(this);
+                gameManager.EndLevelGoalReached(this);
             } 
             else
             {

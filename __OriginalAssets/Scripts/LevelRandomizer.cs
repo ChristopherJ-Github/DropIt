@@ -3,8 +3,6 @@ using System.Collections;
 
 public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
 {
-    public delegate void StateHandler();
-    private StateHandler State;
 
 	void Start ()
     {
@@ -15,15 +13,23 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
     public void SwitchToWaitingToRandomize()
     {
         //show blank slots
-        State = WaitingToRandomize;
+        GameManager.instance.state = State.waitingToRandomize;
     }
 
     void Update ()
     {
-        State();
+        if (GameManager.instance.state == State.waitingToRandomize)
+        {
+            GetRandomizationInput();
+        }
+        else if (GameManager.instance.state == State.waitingToApply)
+        {
+            GetRandomizationInput();
+            GetConfirmationInput();
+        }
 	}
 
-    void WaitingToRandomize()
+    void GetRandomizationInput()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -58,19 +64,15 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
 
     void SwitchToWaitingToApply ()
     {
-        State = WaitingToApply;
+        GameManager.instance.state = State.waitingToApply;
         //show ui button
     }
 
-    void WaitingToApply ()
+    void GetConfirmationInput ()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
             ApplyLevel();
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            RandomizeLevel();
         }
     }
 
@@ -85,8 +87,7 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
 
     void SwitchToGameplay ()
     {
-        State = GamePlay;
+        GameManager.instance.ResetTimer();
+        GameManager.instance.state = State.gameplay;
     }
-
-    void GamePlay () { }
 }

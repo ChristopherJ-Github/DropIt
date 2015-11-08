@@ -12,6 +12,8 @@ public class DropableCollision : MonoBehaviour
     {
         if (otherCollider.tag == "Drop Target")
         {
+            DropTarget dropTarget = otherCollider.GetComponent<DropTarget>();
+            dropTarget.TurnOff();
             scoreManager.score++;
             Destroy(gameObject);
         }
