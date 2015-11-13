@@ -6,11 +6,22 @@ public class Dropper : MonoBehaviour
     private GameObject dropable;
     private ScoreManager scoreManager;
 
-	void Start ()
+    void Start()
     {
         dropable = PlayerManager.instance.dropable.prefab;
         scoreManager = GetComponent<ScoreManager>();
-	}
+        UpdateDropSize();
+    }
+
+    private Vector3 size;
+
+    void UpdateDropSize()
+    {
+        GameObject dropable = Instantiate(this.dropable) as GameObject;
+        Bounds bounds = dropable.GetComponent<Collider>().bounds;
+        size = bounds.extents;
+        Destroy(dropable);
+    }
 	
 	void Update ()
     {
@@ -25,6 +36,15 @@ public class Dropper : MonoBehaviour
         GameObject dropable = Instantiate(this.dropable) as GameObject;
         DropableCollision dropableCollision = dropable.GetComponent<DropableCollision>();
         dropableCollision.scoreManager = scoreManager;
-        dropable.transform.position = transform.position;
+        dropable.transform.position = GetDropPosition();
+    }
+
+    public float error;
+
+    Vector3 GetDropPosition ()
+    {
+        Vector3 shift = -transform.up * (size.y + PlayerManager.instance.size.y + error);
+        Vector3 dropPosition = transform.position + shift;
+        return dropPosition;
     }
 }

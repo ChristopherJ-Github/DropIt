@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11477380}
   - 54: {fileID: 5485298}
   - 114: {fileID: 11453228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dropable 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8da7235a0247964888de191816f8afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 0}
 --- !u!114 &11477380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,13 +114,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1145ac330cd27e42a310874510a911f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attract: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117860}

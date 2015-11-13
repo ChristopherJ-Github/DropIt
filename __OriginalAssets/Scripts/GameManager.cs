@@ -35,7 +35,7 @@ public class GameManager : DestructiveSingleton<GameManager>
         if (state == State.gameplay)
         {
             timer += Time.deltaTime;
-            Debug.Log(timer);
+            //Debug.Log(timer);
         }
     }
 
@@ -53,7 +53,7 @@ public class GameManager : DestructiveSingleton<GameManager>
         EndLevel();
     }
 
-    [HideInInspector] public State state;
+    public State state;
 
     void EndLevel ()
     {

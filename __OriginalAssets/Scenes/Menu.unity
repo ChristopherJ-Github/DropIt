@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLimit: 20
   goalScore: 0
+  state: 0
 --- !u!4 &768935094
 Transform:
   m_ObjectHideFlags: 0
@@ -199,6 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCharacter: {fileID: 0}
+  size: {x: 0, y: 0, z: 0}
   dropable:
     name: 
     thumbnail: {fileID: 0}

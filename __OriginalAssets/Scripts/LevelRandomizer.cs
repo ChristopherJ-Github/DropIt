@@ -14,6 +14,7 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
     {
         //show blank slots
         GameManager.instance.state = State.waitingToRandomize;
+        Debug.Log("press R to randomize");
     }
 
     void Update ()
@@ -65,6 +66,7 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
     void SwitchToWaitingToApply ()
     {
         GameManager.instance.state = State.waitingToApply;
+        Debug.Log("press A to apply or R to randomize again");
         //show ui button
     }
 
@@ -72,13 +74,14 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            ApplyLevel();
+            StartCoroutine(ApplyLevel());
         }
     }
 
-    void ApplyLevel ()
+    IEnumerator ApplyLevel ()
     {
-        Application.LoadLevel(planet.sceneName);
+        AsyncOperation async = Application.LoadLevelAsync(planet.sceneName);
+        yield return async;
         PlayerManager.instance.SetCharacter(character);
         PlayerManager.instance.dropable = dropable;
         SwitchToGameplay ();
