@@ -12,6 +12,7 @@ GameObject:
   - 135: {fileID: 13582490}
   - 23: {fileID: 2385558}
   - 54: {fileID: 5487926}
+  - 114: {fileID: 11422438}
   m_Layer: 0
   m_Name: Witch Projectile
   m_TagString: Untagged
@@ -77,6 +78,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &11422438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab9928b595b9ac4f9c3051ce64982c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 5
 --- !u!135 &13582490
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -99,6 +112,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: destroyTime
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
