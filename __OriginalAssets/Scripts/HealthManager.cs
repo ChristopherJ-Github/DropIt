@@ -40,10 +40,17 @@ public class HealthManager : MonoBehaviour
 
     public void NotifyDeath()
     {
+        EndLevel();
         if (OnDeath != null && !notified)
         {
             OnDeath();
         }
+    }
+
+    void EndLevel ()
+    {
+        Debug.Log("You died");
+        GameManager.instance.EndLevel();
     }
 
     private bool invincible;

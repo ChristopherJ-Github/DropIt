@@ -55,7 +55,7 @@ public class GameManager : DestructiveSingleton<GameManager>
 
     public State state;
 
-    void EndLevel ()
+    public void EndLevel ()
     {
         goalScore = 0;
         Destroy(PlayerManager.instance.currentCharacter);
