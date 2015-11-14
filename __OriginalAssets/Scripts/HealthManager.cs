@@ -26,7 +26,7 @@ public class HealthManager : MonoBehaviour
         {
             value = (int)Mathf.Clamp(value, 0, maxHealth);
             _health = value;
-            Debug.Log(_health);
+            //Debug.Log(_health);
             if (_health == 0)
             {
                 NotifyDeath();

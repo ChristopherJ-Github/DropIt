@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
         Vector3 YMovement = GetYMovement (); 
         moveDirection = (XZMovement + YMovement) * moveSpeed * Time.deltaTime;
         _rigidBody.MovePosition(_rigidBody.position + moveDirection);
+        if (XZMovement != Vector3.zero)
+        {
+            _rigidBody.velocity = Vector3.zero;
+        }
     }
 
     public float flyHeight;
