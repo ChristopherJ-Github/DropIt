@@ -21,7 +21,8 @@ public class DropableCollision : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Planet")
+        if (collision.gameObject.tag == "Planet" ||
+            collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
         }
