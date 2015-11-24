@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerManager : DestructiveSingleton<PlayerManager>
 {
-    [HideInInspector] public GameObject currentCharacter;
+    public GameObject currentCharacter; //should only be set in gameplay scenes
     private bool spawnCharacter;
 
     public void SetCharacter (Character character)

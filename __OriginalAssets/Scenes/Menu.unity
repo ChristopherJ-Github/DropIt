@@ -319,25 +319,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
-  - name: Character 1
+  - name: Broom
     thumbnail: {fileID: 0}
-    prefab: {fileID: 117860, guid: d6487b7df8b89124cb486e757e3a2986, type: 2}
-  - name: Character 2
+    prefab: {fileID: 118952, guid: ca288e70f7cd41546bf6e4a5ed4e48bb, type: 2}
+  - name: Plane
     thumbnail: {fileID: 0}
-    prefab: {fileID: 117860, guid: d78f6c269379e8948aff9fa3fa63f178, type: 2}
-  - name: Character 3
-    thumbnail: {fileID: 0}
-    prefab: {fileID: 117860, guid: 719fcbc1a2e471a4b8a1b16530e6fc4f, type: 2}
+    prefab: {fileID: 101988, guid: 36fcff4353279a540aa8008805b544df, type: 2}
   dropables:
-  - name: Dropable 1
+  - name: Bird
     thumbnail: {fileID: 0}
-    prefab: {fileID: 117860, guid: cb4bc0c8afc7b90408939012ce9fedea, type: 2}
-  - name: Dropable 2
+    prefab: {fileID: 100612, guid: 1bbd70dbf278c81469f7e4608e1c4b14, type: 2}
+  - name: Cake
     thumbnail: {fileID: 0}
-    prefab: {fileID: 117860, guid: 03679d31b573805458902f5a89f0467b, type: 2}
-  - name: Dropable 3
+    prefab: {fileID: 166596, guid: ebffdbe64ef40f1468815742237d433c, type: 2}
+  - name: Egg
     thumbnail: {fileID: 0}
-    prefab: {fileID: 117860, guid: 13403dd40b5c77c40b470bf592189ab6, type: 2}
+    prefab: {fileID: 164562, guid: 678a5b6261a9f484590963aa994ac79e, type: 2}
+  - name: Milk Bottle
+    thumbnail: {fileID: 0}
+    prefab: {fileID: 152964, guid: 6f7352ca702abec489c6464d5b63ed85, type: 2}
+  - name: Pig
+    thumbnail: {fileID: 0}
+    prefab: {fileID: 161366, guid: 494f37d17e5819344b65972134c3a6a4, type: 2}
   planets:
   - name: Witch Land
     thumbnail: {fileID: 0}

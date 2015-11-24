@@ -1,0 +1,1095 @@
+fileFormatVersion: 2
+guid: 60751e35a12d72648a93e081c8d5ee22
+timeCreated: 1448382738
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bird
+    100002: bird001
+    100004: bird002
+    100006: bird003
+    100008: bird004
+    100010: bird005
+    100012: bird006
+    100014: bird007
+    100016: body
+    100018: Box001
+    100020: broom
+    100022: cake
+    100024: cake01
+    100026: Camera
+    100028: Cylinder001
+    100030: Cylinder003
+    100032: Cylinder004
+    100034: drying rack
+    100036: egg
+    100038: egg001
+    100040: egg002
+    100042: egg003
+    100044: egg004
+    100046: egg005
+    100048: egg006
+    100050: eyes
+    100052: eyes002
+    100054: eyes003
+    100056: eyes004
+    100058: eyes005
+    100060: eyes01
+    100062: fence
+    100064: fence001
+    100066: fence002
+    100068: fence003
+    100070: fence004
+    100072: fence005
+    100074: fence006
+    100076: fence007
+    100078: fence008
+    100080: fence009
+    100082: fence010
+    100084: fence011
+    100086: fence012
+    100088: fence013
+    100090: fence014
+    100092: fence015
+    100094: fence016
+    100096: fence017
+    100098: fence018
+    100100: fence019
+    100102: fence020
+    100104: fence021
+    100106: fence022
+    100108: fence023
+    100110: fence024
+    100112: fence025
+    100114: fence026
+    100116: fence027
+    100118: fence028
+    100120: fence029
+    100122: fence030
+    100124: fence031
+    100126: fence032
+    100128: fence033
+    100130: fence034
+    100132: fence035
+    100134: fence036
+    100136: fence037
+    100138: fence038
+    100140: fence039
+    100142: fence040
+    100144: fence041
+    100146: fence042
+    100148: fence043
+    100150: fence044
+    100152: fence045
+    100154: fence046
+    100156: fence047
+    100158: fence048
+    100160: fence049
+    100162: fence050
+    100164: fence051
+    100166: fence052
+    100168: fence053
+    100170: fence054
+    100172: fence055
+    100174: fence056
+    100176: fence057
+    100178: fence058
+    100180: fence059
+    100182: fence060
+    100184: fence061
+    100186: fence062
+    100188: fence063
+    100190: fence064
+    100192: fence065
+    100194: fence066
+    100196: fence067
+    100198: fence068
+    100200: fence069
+    100202: fence070
+    100204: fence071
+    100206: fence072
+    100208: fence073
+    100210: fence074
+    100212: fence075
+    100214: fence076
+    100216: fence077
+    100218: fire
+    100220: girl 1
+    100222: girl2 biped
+    100224: girl2 biped01
+    100226: girl2 biped02
+    100228: girl2 biped03
+    100230: girl2 biped04
+    100232: girl2 biped05
+    100234: girl2 biped06
+    100236: girl2 biped07
+    100238: girl2 biped08
+    100240: girl2 biped09
+    100242: girl2 biped10
+    100244: girl2 biped11
+    100246: girl2 biped12
+    100248: girl2 biped13
+    100250: girl2 biped14
+    100252: girl2 biped15
+    100254: girl2 biped16
+    100256: girl2 biped17
+    100258: girl2 biped18
+    100260: girl2 biped19
+    100262: girl2 biped20
+    100264: girl2 biped21
+    100266: girl2 biped22
+    100268: girl2 biped23
+    100270: girl2 biped24
+    100272: girl2 biped25
+    100274: girl2 biped26
+    100276: girl2 biped27
+    100278: girl2 biped28
+    100280: girl2 biped29
+    100282: girl2 biped30
+    100284: girl2 biped31
+    100286: girl2 biped32
+    100288: girl2 biped33
+    100290: girl2 biped34
+    100292: girl2 biped35
+    100294: girl2 biped36
+    100296: gril 1 biped
+    100298: gril 1 biped01
+    100300: gril 1 biped02
+    100302: gril 1 biped03
+    100304: gril 1 biped04
+    100306: gril 1 biped05
+    100308: gril 1 biped06
+    100310: gril 1 biped07
+    100312: gril 1 biped08
+    100314: gril 1 biped09
+    100316: gril 1 biped10
+    100318: gril 1 biped11
+    100320: gril 1 biped12
+    100322: gril 1 biped13
+    100324: gril 1 biped14
+    100326: gril 1 biped15
+    100328: gril 1 biped16
+    100330: gril 1 biped17
+    100332: gril 1 biped18
+    100334: gril 1 biped19
+    100336: gril 1 biped20
+    100338: gril 1 biped21
+    100340: gril 1 biped22
+    100342: gril 1 biped23
+    100344: gril 1 biped24
+    100346: gril 1 biped25
+    100348: gril 1 biped26
+    100350: gril 1 biped27
+    100352: gril 1 biped28
+    100354: gril 1 biped29
+    100356: gril 1 biped30
+    100358: gril 1 biped31
+    100360: gril 1 biped32
+    100362: gril 1 biped33
+    100364: gril 1 biped34
+    100366: gril 1 biped35
+    100368: gril 1 biped36
+    100370: gril 1 biped37
+    100372: gril 1 biped38
+    100374: gril 1 biped39
+    100376: Lamp
+    100378: log
+    100380: log003
+    100382: log004
+    100384: log005
+    100386: log006
+    100388: log007
+    100390: log008
+    100392: log009
+    100394: log01
+    100396: log010
+    100398: log011
+    100400: log012
+    100402: log013
+    100404: log014
+    100406: log015
+    100408: log016
+    100410: log017
+    100412: log018
+    100414: log019
+    100416: log02
+    100418: log020
+    100420: log021
+    100422: log022
+    100424: log023
+    100426: log024
+    100428: log025
+    100430: log026
+    100432: log027
+    100434: log028
+    100436: log029
+    100438: pig
+    100440: pig001
+    100442: pig002
+    100444: pig003
+    100446: pig004
+    100448: pot
+    100450: //RootNode
+    100452: sheep bpdy 002
+    100454: sheep bpdy 1
+    100456: Sphere001
+    100458: stone
+    100460: stone001
+    100462: stone002
+    100464: stone003
+    100466: stone004
+    100468: stone005
+    100470: stone006
+    100472: stone007
+    100474: stone008
+    100476: stone009
+    100478: stone010
+    100480: stone011
+    100482: stone012
+    100484: stone013
+    100486: stone014
+    100488: stone015
+    100490: wool
+    100492: wool002
+    100494: wool003
+    100496: wool004
+    100498: wool005
+    100500: wool01
+    400000: bird
+    400002: bird001
+    400004: bird002
+    400006: bird003
+    400008: bird004
+    400010: bird005
+    400012: bird006
+    400014: bird007
+    400016: body
+    400018: Box001
+    400020: broom
+    400022: cake
+    400024: cake01
+    400026: Camera
+    400028: Cylinder001
+    400030: Cylinder003
+    400032: Cylinder004
+    400034: drying rack
+    400036: egg
+    400038: egg001
+    400040: egg002
+    400042: egg003
+    400044: egg004
+    400046: egg005
+    400048: egg006
+    400050: eyes
+    400052: eyes002
+    400054: eyes003
+    400056: eyes004
+    400058: eyes005
+    400060: eyes01
+    400062: fence
+    400064: fence001
+    400066: fence002
+    400068: fence003
+    400070: fence004
+    400072: fence005
+    400074: fence006
+    400076: fence007
+    400078: fence008
+    400080: fence009
+    400082: fence010
+    400084: fence011
+    400086: fence012
+    400088: fence013
+    400090: fence014
+    400092: fence015
+    400094: fence016
+    400096: fence017
+    400098: fence018
+    400100: fence019
+    400102: fence020
+    400104: fence021
+    400106: fence022
+    400108: fence023
+    400110: fence024
+    400112: fence025
+    400114: fence026
+    400116: fence027
+    400118: fence028
+    400120: fence029
+    400122: fence030
+    400124: fence031
+    400126: fence032
+    400128: fence033
+    400130: fence034
+    400132: fence035
+    400134: fence036
+    400136: fence037
+    400138: fence038
+    400140: fence039
+    400142: fence040
+    400144: fence041
+    400146: fence042
+    400148: fence043
+    400150: fence044
+    400152: fence045
+    400154: fence046
+    400156: fence047
+    400158: fence048
+    400160: fence049
+    400162: fence050
+    400164: fence051
+    400166: fence052
+    400168: fence053
+    400170: fence054
+    400172: fence055
+    400174: fence056
+    400176: fence057
+    400178: fence058
+    400180: fence059
+    400182: fence060
+    400184: fence061
+    400186: fence062
+    400188: fence063
+    400190: fence064
+    400192: fence065
+    400194: fence066
+    400196: fence067
+    400198: fence068
+    400200: fence069
+    400202: fence070
+    400204: fence071
+    400206: fence072
+    400208: fence073
+    400210: fence074
+    400212: fence075
+    400214: fence076
+    400216: fence077
+    400218: fire
+    400220: girl 1
+    400222: girl2 biped
+    400224: girl2 biped01
+    400226: girl2 biped02
+    400228: girl2 biped03
+    400230: girl2 biped04
+    400232: girl2 biped05
+    400234: girl2 biped06
+    400236: girl2 biped07
+    400238: girl2 biped08
+    400240: girl2 biped09
+    400242: girl2 biped10
+    400244: girl2 biped11
+    400246: girl2 biped12
+    400248: girl2 biped13
+    400250: girl2 biped14
+    400252: girl2 biped15
+    400254: girl2 biped16
+    400256: girl2 biped17
+    400258: girl2 biped18
+    400260: girl2 biped19
+    400262: girl2 biped20
+    400264: girl2 biped21
+    400266: girl2 biped22
+    400268: girl2 biped23
+    400270: girl2 biped24
+    400272: girl2 biped25
+    400274: girl2 biped26
+    400276: girl2 biped27
+    400278: girl2 biped28
+    400280: girl2 biped29
+    400282: girl2 biped30
+    400284: girl2 biped31
+    400286: girl2 biped32
+    400288: girl2 biped33
+    400290: girl2 biped34
+    400292: girl2 biped35
+    400294: girl2 biped36
+    400296: gril 1 biped
+    400298: gril 1 biped01
+    400300: gril 1 biped02
+    400302: gril 1 biped03
+    400304: gril 1 biped04
+    400306: gril 1 biped05
+    400308: gril 1 biped06
+    400310: gril 1 biped07
+    400312: gril 1 biped08
+    400314: gril 1 biped09
+    400316: gril 1 biped10
+    400318: gril 1 biped11
+    400320: gril 1 biped12
+    400322: gril 1 biped13
+    400324: gril 1 biped14
+    400326: gril 1 biped15
+    400328: gril 1 biped16
+    400330: gril 1 biped17
+    400332: gril 1 biped18
+    400334: gril 1 biped19
+    400336: gril 1 biped20
+    400338: gril 1 biped21
+    400340: gril 1 biped22
+    400342: gril 1 biped23
+    400344: gril 1 biped24
+    400346: gril 1 biped25
+    400348: gril 1 biped26
+    400350: gril 1 biped27
+    400352: gril 1 biped28
+    400354: gril 1 biped29
+    400356: gril 1 biped30
+    400358: gril 1 biped31
+    400360: gril 1 biped32
+    400362: gril 1 biped33
+    400364: gril 1 biped34
+    400366: gril 1 biped35
+    400368: gril 1 biped36
+    400370: gril 1 biped37
+    400372: gril 1 biped38
+    400374: gril 1 biped39
+    400376: Lamp
+    400378: log
+    400380: log003
+    400382: log004
+    400384: log005
+    400386: log006
+    400388: log007
+    400390: log008
+    400392: log009
+    400394: log01
+    400396: log010
+    400398: log011
+    400400: log012
+    400402: log013
+    400404: log014
+    400406: log015
+    400408: log016
+    400410: log017
+    400412: log018
+    400414: log019
+    400416: log02
+    400418: log020
+    400420: log021
+    400422: log022
+    400424: log023
+    400426: log024
+    400428: log025
+    400430: log026
+    400432: log027
+    400434: log028
+    400436: log029
+    400438: pig
+    400440: pig001
+    400442: pig002
+    400444: pig003
+    400446: pig004
+    400448: pot
+    400450: //RootNode
+    400452: sheep bpdy 002
+    400454: sheep bpdy 1
+    400456: Sphere001
+    400458: stone
+    400460: stone001
+    400462: stone002
+    400464: stone003
+    400466: stone004
+    400468: stone005
+    400470: stone006
+    400472: stone007
+    400474: stone008
+    400476: stone009
+    400478: stone010
+    400480: stone011
+    400482: stone012
+    400484: stone013
+    400486: stone014
+    400488: stone015
+    400490: wool
+    400492: wool002
+    400494: wool003
+    400496: wool004
+    400498: wool005
+    400500: wool01
+    2300000: bird
+    2300002: bird001
+    2300004: bird002
+    2300006: bird003
+    2300008: bird004
+    2300010: bird005
+    2300012: bird006
+    2300014: bird007
+    2300016: Box001
+    2300018: broom
+    2300020: cake
+    2300022: cake01
+    2300024: Cylinder001
+    2300026: Cylinder003
+    2300028: Cylinder004
+    2300030: drying rack
+    2300032: egg
+    2300034: egg001
+    2300036: egg002
+    2300038: egg003
+    2300040: egg004
+    2300042: egg005
+    2300044: egg006
+    2300046: eyes
+    2300048: eyes002
+    2300050: eyes003
+    2300052: eyes004
+    2300054: eyes005
+    2300056: eyes01
+    2300058: fence
+    2300060: fence001
+    2300062: fence002
+    2300064: fence003
+    2300066: fence004
+    2300068: fence005
+    2300070: fence006
+    2300072: fence007
+    2300074: fence008
+    2300076: fence009
+    2300078: fence010
+    2300080: fence011
+    2300082: fence012
+    2300084: fence013
+    2300086: fence014
+    2300088: fence015
+    2300090: fence016
+    2300092: fence017
+    2300094: fence018
+    2300096: fence019
+    2300098: fence020
+    2300100: fence021
+    2300102: fence022
+    2300104: fence023
+    2300106: fence024
+    2300108: fence025
+    2300110: fence026
+    2300112: fence027
+    2300114: fence028
+    2300116: fence029
+    2300118: fence030
+    2300120: fence031
+    2300122: fence032
+    2300124: fence033
+    2300126: fence034
+    2300128: fence035
+    2300130: fence036
+    2300132: fence037
+    2300134: fence038
+    2300136: fence039
+    2300138: fence040
+    2300140: fence041
+    2300142: fence042
+    2300144: fence043
+    2300146: fence044
+    2300148: fence045
+    2300150: fence046
+    2300152: fence047
+    2300154: fence048
+    2300156: fence049
+    2300158: fence050
+    2300160: fence051
+    2300162: fence052
+    2300164: fence053
+    2300166: fence054
+    2300168: fence055
+    2300170: fence056
+    2300172: fence057
+    2300174: fence058
+    2300176: fence059
+    2300178: fence060
+    2300180: fence061
+    2300182: fence062
+    2300184: fence063
+    2300186: fence064
+    2300188: fence065
+    2300190: fence066
+    2300192: fence067
+    2300194: fence068
+    2300196: fence069
+    2300198: fence070
+    2300200: fence071
+    2300202: fence072
+    2300204: fence073
+    2300206: fence074
+    2300208: fence075
+    2300210: fence076
+    2300212: fence077
+    2300214: fire
+    2300216: girl 1
+    2300218: gril 1 biped37
+    2300220: gril 1 biped38
+    2300222: gril 1 biped39
+    2300224: log
+    2300226: log003
+    2300228: log004
+    2300230: log005
+    2300232: log006
+    2300234: log007
+    2300236: log008
+    2300238: log009
+    2300240: log01
+    2300242: log010
+    2300244: log011
+    2300246: log012
+    2300248: log013
+    2300250: log014
+    2300252: log015
+    2300254: log016
+    2300256: log017
+    2300258: log018
+    2300260: log019
+    2300262: log02
+    2300264: log020
+    2300266: log021
+    2300268: log022
+    2300270: log023
+    2300272: log024
+    2300274: log025
+    2300276: log026
+    2300278: log027
+    2300280: log028
+    2300282: log029
+    2300284: pig
+    2300286: pig001
+    2300288: pig002
+    2300290: pig003
+    2300292: pig004
+    2300294: pot
+    2300296: sheep bpdy 002
+    2300298: sheep bpdy 1
+    2300300: Sphere001
+    2300302: stone
+    2300304: stone001
+    2300306: stone002
+    2300308: stone003
+    2300310: stone004
+    2300312: stone005
+    2300314: stone006
+    2300316: stone007
+    2300318: stone008
+    2300320: stone009
+    2300322: stone010
+    2300324: stone011
+    2300326: stone012
+    2300328: stone013
+    2300330: stone014
+    2300332: stone015
+    2300334: wool
+    2300336: wool002
+    2300338: wool003
+    2300340: wool004
+    2300342: wool005
+    2300344: wool01
+    3300000: bird
+    3300002: bird001
+    3300004: bird002
+    3300006: bird003
+    3300008: bird004
+    3300010: bird005
+    3300012: bird006
+    3300014: bird007
+    3300016: Box001
+    3300018: broom
+    3300020: cake
+    3300022: cake01
+    3300024: Cylinder001
+    3300026: Cylinder003
+    3300028: Cylinder004
+    3300030: drying rack
+    3300032: egg
+    3300034: egg001
+    3300036: egg002
+    3300038: egg003
+    3300040: egg004
+    3300042: egg005
+    3300044: egg006
+    3300046: eyes
+    3300048: eyes002
+    3300050: eyes003
+    3300052: eyes004
+    3300054: eyes005
+    3300056: eyes01
+    3300058: fence
+    3300060: fence001
+    3300062: fence002
+    3300064: fence003
+    3300066: fence004
+    3300068: fence005
+    3300070: fence006
+    3300072: fence007
+    3300074: fence008
+    3300076: fence009
+    3300078: fence010
+    3300080: fence011
+    3300082: fence012
+    3300084: fence013
+    3300086: fence014
+    3300088: fence015
+    3300090: fence016
+    3300092: fence017
+    3300094: fence018
+    3300096: fence019
+    3300098: fence020
+    3300100: fence021
+    3300102: fence022
+    3300104: fence023
+    3300106: fence024
+    3300108: fence025
+    3300110: fence026
+    3300112: fence027
+    3300114: fence028
+    3300116: fence029
+    3300118: fence030
+    3300120: fence031
+    3300122: fence032
+    3300124: fence033
+    3300126: fence034
+    3300128: fence035
+    3300130: fence036
+    3300132: fence037
+    3300134: fence038
+    3300136: fence039
+    3300138: fence040
+    3300140: fence041
+    3300142: fence042
+    3300144: fence043
+    3300146: fence044
+    3300148: fence045
+    3300150: fence046
+    3300152: fence047
+    3300154: fence048
+    3300156: fence049
+    3300158: fence050
+    3300160: fence051
+    3300162: fence052
+    3300164: fence053
+    3300166: fence054
+    3300168: fence055
+    3300170: fence056
+    3300172: fence057
+    3300174: fence058
+    3300176: fence059
+    3300178: fence060
+    3300180: fence061
+    3300182: fence062
+    3300184: fence063
+    3300186: fence064
+    3300188: fence065
+    3300190: fence066
+    3300192: fence067
+    3300194: fence068
+    3300196: fence069
+    3300198: fence070
+    3300200: fence071
+    3300202: fence072
+    3300204: fence073
+    3300206: fence074
+    3300208: fence075
+    3300210: fence076
+    3300212: fence077
+    3300214: fire
+    3300216: girl 1
+    3300218: gril 1 biped37
+    3300220: gril 1 biped38
+    3300222: gril 1 biped39
+    3300224: log
+    3300226: log003
+    3300228: log004
+    3300230: log005
+    3300232: log006
+    3300234: log007
+    3300236: log008
+    3300238: log009
+    3300240: log01
+    3300242: log010
+    3300244: log011
+    3300246: log012
+    3300248: log013
+    3300250: log014
+    3300252: log015
+    3300254: log016
+    3300256: log017
+    3300258: log018
+    3300260: log019
+    3300262: log02
+    3300264: log020
+    3300266: log021
+    3300268: log022
+    3300270: log023
+    3300272: log024
+    3300274: log025
+    3300276: log026
+    3300278: log027
+    3300280: log028
+    3300282: log029
+    3300284: pig
+    3300286: pig001
+    3300288: pig002
+    3300290: pig003
+    3300292: pig004
+    3300294: pot
+    3300296: sheep bpdy 002
+    3300298: sheep bpdy 1
+    3300300: Sphere001
+    3300302: stone
+    3300304: stone001
+    3300306: stone002
+    3300308: stone003
+    3300310: stone004
+    3300312: stone005
+    3300314: stone006
+    3300316: stone007
+    3300318: stone008
+    3300320: stone009
+    3300322: stone010
+    3300324: stone011
+    3300326: stone012
+    3300328: stone013
+    3300330: stone014
+    3300332: stone015
+    3300334: wool
+    3300336: wool002
+    3300338: wool003
+    3300340: wool004
+    3300342: wool005
+    3300344: wool01
+    4300000: bird
+    4300002: broom
+    4300004: drying rack
+    4300006: egg
+    4300008: fence
+    4300010: fire
+    4300012: pig
+    4300014: pot
+    4300016: Sphere001
+    4300018: eyes01
+    4300020: eyes
+    4300022: wool01
+    4300024: wool
+    4300026: stone
+    4300028: stone001
+    4300030: stone002
+    4300032: stone003
+    4300034: stone004
+    4300036: stone005
+    4300038: Cylinder003
+    4300040: Box001
+    4300042: stone006
+    4300044: stone007
+    4300046: stone008
+    4300048: stone009
+    4300050: stone010
+    4300052: stone011
+    4300054: pig001
+    4300056: pig002
+    4300058: pig003
+    4300060: bird001
+    4300062: bird002
+    4300064: bird003
+    4300066: bird004
+    4300068: bird005
+    4300070: egg001
+    4300072: egg002
+    4300074: egg003
+    4300076: egg004
+    4300078: sheep bpdy 1
+    4300080: eyes002
+    4300082: eyes003
+    4300084: wool002
+    4300086: wool003
+    4300088: stone012
+    4300090: stone013
+    4300092: stone014
+    4300094: stone015
+    4300096: girl 1
+    4300098: cake
+    4300100: cake01
+    4300102: fence001
+    4300104: fence002
+    4300106: fence003
+    4300108: fence004
+    4300110: fence005
+    4300112: fence006
+    4300114: fence007
+    4300116: fence008
+    4300118: fence009
+    4300120: fence010
+    4300122: fence011
+    4300124: fence012
+    4300126: fence013
+    4300128: fence014
+    4300130: body
+    4300132: Cylinder004
+    4300134: Cylinder001
+    4300136: gril 1 biped37
+    4300138: gril 1 biped39
+    4300140: gril 1 biped38
+    4300142: log01
+    4300144: log02
+    4300146: log
+    4300148: log004
+    4300150: log003
+    4300152: log005
+    4300154: log007
+    4300156: log006
+    4300158: log008
+    4300160: log010
+    4300162: log009
+    4300164: log011
+    4300166: log012
+    4300168: log013
+    4300170: log014
+    4300172: log015
+    4300174: log022
+    4300176: log023
+    4300178: log016
+    4300180: log017
+    4300182: log026
+    4300184: log027
+    4300186: log018
+    4300188: log020
+    4300190: log021
+    4300192: log019
+    4300194: log028
+    4300196: log029
+    4300198: log024
+    4300200: log025
+    4300202: fence015
+    4300204: fence016
+    4300206: fence017
+    4300208: fence018
+    4300210: fence019
+    4300212: fence020
+    4300214: fence021
+    4300216: fence022
+    4300218: fence023
+    4300220: fence024
+    4300222: fence025
+    4300224: fence026
+    4300226: fence027
+    4300228: fence028
+    4300230: fence029
+    4300232: fence030
+    4300234: fence031
+    4300236: fence032
+    4300238: fence033
+    4300240: fence034
+    4300242: fence035
+    4300244: fence036
+    4300246: fence037
+    4300248: fence038
+    4300250: fence039
+    4300252: fence040
+    4300254: fence041
+    4300256: fence042
+    4300258: fence043
+    4300260: fence044
+    4300262: fence045
+    4300264: fence046
+    4300266: fence047
+    4300268: fence048
+    4300270: fence049
+    4300272: fence050
+    4300274: fence051
+    4300276: fence052
+    4300278: fence053
+    4300280: fence054
+    4300282: fence055
+    4300284: fence056
+    4300286: fence057
+    4300288: fence058
+    4300290: fence059
+    4300292: fence060
+    4300294: fence061
+    4300296: fence062
+    4300298: fence063
+    4300300: fence064
+    4300302: fence065
+    4300304: fence066
+    4300306: fence067
+    4300308: fence068
+    4300310: fence069
+    4300312: fence070
+    4300314: fence071
+    4300316: fence072
+    4300318: fence073
+    4300320: fence074
+    4300322: fence075
+    4300324: fence076
+    4300326: fence077
+    4300328: sheep bpdy 002
+    4300330: eyes004
+    4300332: eyes005
+    4300334: wool004
+    4300336: wool005
+    4300338: pig004
+    4300340: egg005
+    4300342: egg006
+    4300344: bird006
+    4300346: bird007
+    9500000: //RootNode
+    13700000: body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
