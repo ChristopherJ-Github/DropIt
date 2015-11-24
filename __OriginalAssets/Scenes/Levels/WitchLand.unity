@@ -400,9 +400,9 @@ MonoBehaviour:
   currentCharacter: {fileID: 663782127}
   size: {x: 0, y: 0, z: 0}
   dropable:
-    name: Egg
+    name: Milk-Bottle
     thumbnail: {fileID: 0}
-    prefab: {fileID: 164562, guid: 678a5b6261a9f484590963aa994ac79e, type: 2}
+    prefab: {fileID: 152964, guid: 6f7352ca702abec489c6464d5b63ed85, type: 2}
 --- !u!1 &1267931800
 GameObject:
   m_ObjectHideFlags: 0

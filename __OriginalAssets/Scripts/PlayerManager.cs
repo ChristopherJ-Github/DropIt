@@ -14,6 +14,7 @@ public class PlayerManager : DestructiveSingleton<PlayerManager>
             Destroy(playerController.gameObject);
         }
         currentCharacter = Instantiate(character.prefab) as GameObject;
+        CameraFollow.instance.toFollow = currentCharacter.transform;
         UpdateCharacterSize();
     }
 

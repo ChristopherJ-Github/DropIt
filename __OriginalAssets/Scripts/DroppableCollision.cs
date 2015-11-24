@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DropableCollision : MonoBehaviour
+public class DroppableCollision : MonoBehaviour
 {
     [HideInInspector] public ScoreManager scoreManager;
 

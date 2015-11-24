@@ -34,7 +34,7 @@ public class Dropper : MonoBehaviour
     void Drop ()
     {
         GameObject dropable = Instantiate(this.dropable) as GameObject;
-        DropableCollision dropableCollision = dropable.GetComponent<DropableCollision>();
+        DroppableCollision dropableCollision = dropable.GetComponent<DroppableCollision>();
         dropableCollision.scoreManager = scoreManager;
         dropable.transform.position = GetDropPosition();
     }

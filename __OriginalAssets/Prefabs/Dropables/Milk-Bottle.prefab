@@ -89,10 +89,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 402722}
-  - 114: {fileID: 11418552}
   - 54: {fileID: 5477324}
-  - 114: {fileID: 11425010}
   - 135: {fileID: 13521172}
+  - 114: {fileID: 11426148}
+  - 114: {fileID: 11407376}
   m_Layer: 8
   m_Name: Milk-Bottle
   m_TagString: Untagged
@@ -309,13 +309,13 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11418552
+--- !u!114 &11407376
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -323,11 +323,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 152964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1145ac330cd27e42a310874510a911f, type: 3}
+  m_Script: {fileID: 11500000, guid: bffb6d0221b91f0409534de4fd2e7b1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attract: 1
---- !u!114 &11425010
+--- !u!114 &11426148
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -357,7 +356,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: freezeRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxTorque
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 152964}

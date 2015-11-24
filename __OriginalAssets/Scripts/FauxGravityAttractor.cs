@@ -5,7 +5,7 @@ public class FauxGravityAttractor : Singleton<FauxGravityAttractor>
 {
     public float gravity;
 
-    public void Attract (Transform _transform, Rigidbody _rigibody, bool attract = true)
+    public void Attract (Transform _transform, Rigidbody _rigibody, bool attract = true, bool rotate = true)
     {
         Vector3 gravityUp = (_transform.position - transform.position).normalized;
         Vector4 bodyUp = _transform.up;
@@ -13,7 +13,10 @@ public class FauxGravityAttractor : Singleton<FauxGravityAttractor>
         {
             _rigibody.AddForce(gravityUp * -gravity);
         }
-        Quaternion targetRotation = Quaternion.FromToRotation(bodyUp, gravityUp) * _transform.rotation;
-        _transform.rotation = Quaternion.Slerp(_transform.rotation, targetRotation, 50 * Time.deltaTime);
+        if (rotate)
+        {
+            Quaternion targetRotation = Quaternion.FromToRotation(bodyUp, gravityUp) * _transform.rotation;
+            _transform.rotation = Quaternion.Slerp(_transform.rotation, targetRotation, 50 * Time.deltaTime);
+        }  
     }
 }
