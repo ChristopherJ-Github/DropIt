@@ -32,7 +32,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &111108
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -638,6 +638,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &191352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 476232}
+  m_Layer: 12
+  m_Name: Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &192172
 GameObject:
   m_ObjectHideFlags: 1
@@ -800,13 +815,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.209999993, y: .213, z: 0}
-  m_LocalScale: {x: 2.20473933, y: 2.20473981, z: 2.20473981}
+  m_LocalPosition: {x: -.210000083, y: .212998971, z: 0}
+  m_LocalScale: {x: 2.20473909, y: 2.20473981, z: 2.20474005}
   m_Children:
   - {fileID: 473146}
   - {fileID: 404344}
   - {fileID: 410656}
-  m_Father: {fileID: 483106}
+  m_Father: {fileID: 476232}
   m_RootOrder: 0
 --- !u!4 &424424
 Transform:
@@ -1081,7 +1096,7 @@ Transform:
   m_Children:
   - {fileID: 416256}
   m_Father: {fileID: 483106}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &475020
 Transform:
   m_ObjectHideFlags: 1
@@ -1095,6 +1110,19 @@ Transform:
   - {fileID: 495258}
   m_Father: {fileID: 433934}
   m_RootOrder: 0
+--- !u!4 &476232
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 419930}
+  m_Father: {fileID: 483106}
+  m_RootOrder: 1
 --- !u!4 &477970
 Transform:
   m_ObjectHideFlags: 1
@@ -1140,11 +1168,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135560}
   m_LocalRotation: {x: -.0107441777, y: .800792634, z: -.598672926, w: .0143715534}
-  m_LocalPosition: {x: 0, y: .187537685, z: -.505501986}
-  m_LocalScale: {x: .0448162183, y: .0448161922, z: .0448161922}
+  m_LocalPosition: {x: -0, y: .182899997, z: -.489800006}
+  m_LocalScale: {x: .0249912813, y: .0249912646, z: .0249912646}
   m_Children:
-  - {fileID: 419930}
   - {fileID: 474260}
+  - {fileID: 476232}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &489058
@@ -1302,9 +1330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9041e77a9ea914ca461425e788f557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pivotTransform: {fileID: 476232}
   spawnPoint: {fileID: 416256}
   projectile: {fileID: 198016, guid: 1de95b85b7a0d214295999f8c406525e, type: 2}
-  shootForce: 40
+  shootForce: 100
+  rotateSpeed: 300
 --- !u!136 &13683210
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1390,7 +1420,7 @@ Prefab:
       objectReference: {fileID: 198016, guid: 1de95b85b7a0d214295999f8c406525e, type: 2}
     - target: {fileID: 0}
       propertyPath: shootForce
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Layer

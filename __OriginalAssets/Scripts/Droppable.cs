@@ -25,6 +25,6 @@ public class Droppable : MonoBehaviour
 
     void FixedUpdate()
     {
-        FauxGravityAttractor.instance.Attract(transform, newRigiBody, true, false);
+        PlanetObject.instance.Attract(transform, newRigiBody, true, false);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FauxGravityAttractor : Singleton<FauxGravityAttractor>
+public class PlanetObject : Singleton<PlanetObject>
 {
     public float gravity;
 

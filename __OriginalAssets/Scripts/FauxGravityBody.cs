@@ -23,6 +23,6 @@ public class FauxGravityBody : MonoBehaviour
 	
 	void FixedUpdate ()
     {
-        FauxGravityAttractor.instance.Attract(transform, newRigiBody, attract);
+        PlanetObject.instance.Attract(transform, newRigiBody, attract);
 	}
 }

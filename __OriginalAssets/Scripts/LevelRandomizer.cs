@@ -51,6 +51,10 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
         int characterIndex = Random.Range(0, characters.Length);
         character = characters[characterIndex];
         int dropableIndex = Random.Range(0, dropables.Length);
+        if (dropables[dropableIndex].name == character.name)
+        { //make sure the droppable isn't the same as the character
+            dropableIndex = (dropableIndex + 1) % dropables.Length;
+        }
         dropable = dropables[dropableIndex];
         int planetIndex = Random.Range(0, planets.Length);
         planet = planets[planetIndex];
