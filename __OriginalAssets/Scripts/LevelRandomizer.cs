@@ -3,20 +3,52 @@ using System.Collections;
 
 public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
 {
-    public void SwitchToWaitingToRandomize()
+    enum State { Disabled, WaitingToRandomize, WaitingToApply };
+    State state;
+    Canvas canvas;
+
+    void Start()
     {
-        //show blank slots
-        GameManager.instance.SwitchState(GameState.WaitingToRandomize);
+        base.Start();
+        if (instance == this)
+        {
+            GameManager.instance.OnStateChange += UpdateState;
+            canvas = GetComponent<Canvas>();
+        }     
+    }
+
+    void HideScreen()
+    {
+        canvas.enabled = false;
+        state = State.Disabled;
+    }
+
+    void UpdateState(GameState lastState, GameState newState)
+    {
+        if (newState == GameState.RandomizationScreen)
+        {
+            SwitchToWaitingToRandomize();
+        }
+        else
+        {
+            HideScreen();
+        }
+    }
+
+    void SwitchToWaitingToRandomize()
+    {
+        canvas.enabled = true;
+        state = State.WaitingToRandomize;
         Debug.Log("press R to randomize");
     }
 
     void Update ()
     {
-        if (GameManager.instance.state == GameState.WaitingToRandomize)
+        if (state == State.WaitingToRandomize)
         {
             GetRandomizationInput();
         }
-        else if (GameManager.instance.state == GameState.WaitingToApply)
+        else if (state == State.WaitingToApply)
         {
             GetRandomizationInput();
             GetConfirmationInput();
@@ -62,7 +94,7 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
 
     void SwitchToWaitingToApply ()
     {
-        GameManager.instance.state = GameState.WaitingToApply;
+        state = State.WaitingToApply;
         Debug.Log("press A to apply or R to randomize again");
         //show ui button
     }
@@ -81,13 +113,7 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
         yield return async;
         PlayerManager.instance.SetCharacter(character);
         PlayerManager.instance.dropable = dropable;
-        SwitchToGameplay ();
+        GameManager.instance.SwitchState(GameState.Gameplay);
         Debug.Log("level applied");
-    }
-
-    void SwitchToGameplay ()
-    {
-        GameManager.instance.ResetTimer();
-        GameManager.instance.state = GameState.Gameplay;
     }
 }

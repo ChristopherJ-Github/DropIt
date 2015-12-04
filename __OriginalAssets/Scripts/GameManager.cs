@@ -14,8 +14,8 @@ public class GameManager : DestructiveSingleton<GameManager>
     {
         base.Start();
         SwitchState(GameState.StartScreen);
+        OnStateChange += CheckForTimerReset;
     }
-
     private GameState state;
 
     public void SwitchState(GameState newState)
@@ -26,12 +26,20 @@ public class GameManager : DestructiveSingleton<GameManager>
     public delegate void StateHandler(GameState lastState, GameState newState);
     public event StateHandler OnStateChange;
 
-    public void NotifyStateChange(GameState lastState, GameState newState)
+    void NotifyStateChange(GameState lastState, GameState newState)
     {
         state = newState;
         if (OnStateChange != null)
         {
             OnStateChange(lastState, newState);
+        }
+    }
+
+    void CheckForTimerReset(GameState lastState, GameState newState)
+    {
+        if (newState == GameState.Gameplay)
+        {
+            timer = 0;
         }
     }
 
@@ -48,12 +56,7 @@ public class GameManager : DestructiveSingleton<GameManager>
                 EndLevelTimeOut();
             }
         }
-    }
-
-    public void ResetTimer ()
-    {
-        timer = 0;
-    }
+    }  
 
     void Update ()
     {
@@ -81,11 +84,11 @@ public class GameManager : DestructiveSingleton<GameManager>
     public void EndLevel ()
     {
         goalScore = 0;
-        Destroy(PlayerManager.instance.currentCharacter);
         Application.LoadLevel("Menu");
+        Destroy(PlayerManager.instance.currentCharacter);
         if (LevelRandomizer.instance != null)
         { //used when the game is properly started from the menu. Otherwise there won't be a LevelRandomizer.
-            LevelRandomizer.instance.SwitchToWaitingToRandomize();
+            SwitchState(GameState.RandomizationScreen);
         }
     }
 }

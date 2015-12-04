@@ -2,17 +2,22 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class StartScreen : MonoBehaviour
+public class StartScreen : DestructiveSingleton<StartScreen>
 {
-    enum State { Enabled, Disabled };
-    State state;
-    Canvas canvas;
+    private enum State { Enabled, Disabled };
+    private State state;
+    private Canvas canvas;
+    private bool started;
 
-    void Awake ()
+    void Start ()
     {
-        GameManager.instance.OnStateChange += CheckForStart;
-        canvas = GetComponent<Canvas>();
-        HideScreen();
+        base.Start();
+        if (instance == this)
+        {
+            started = true;
+            GameManager.instance.OnStateChange += UpdateState;
+            canvas = GetComponent<Canvas>();
+        } 
     }
 
     void HideScreen()
@@ -21,7 +26,7 @@ public class StartScreen : MonoBehaviour
         state = State.Disabled;
     } 
 
-    void CheckForStart (GameState lastState, GameState newState)
+    void UpdateState (GameState lastState, GameState newState)
     {
         if (newState == GameState.StartScreen)
         {
@@ -77,10 +82,5 @@ public class StartScreen : MonoBehaviour
         {
             button.sprite = buttonState1;
         }
-    }
-
-    void OnDisable ()
-    {
-        GameManager.instance.OnStateChange += CheckForStart;
     }
 }
