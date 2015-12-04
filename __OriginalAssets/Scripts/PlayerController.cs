@@ -4,10 +4,12 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody _rigidBody;
+    private Transform newTransform;
 
     void Start ()
     {
         _rigidBody = GetComponent<Rigidbody>();
+        newTransform = transform;
     }
 
     public float moveSpeed;
@@ -15,7 +17,19 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate ()
     {
+        Rotate();
         Move();
+    }
+
+    public float rotationSpeed;
+
+    void Rotate ()
+    {
+        float linearRotation = Mathf.InverseLerp(-1, 1, Input.GetAxisRaw("Horizontal2"));
+        float rotationValue = Mathf.Lerp(-90, 90, linearRotation);
+        Quaternion rotation = Quaternion.Euler(new Vector3(0, rotationValue * rotationSpeed * Time.deltaTime, 0));
+        Quaternion newRotation = newTransform.rotation * rotation;
+        newTransform.rotation = newRotation;
     }
 
     void Move ()

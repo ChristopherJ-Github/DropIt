@@ -491,7 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toFollow: {fileID: 663782128}
   positionSpeed: 4.80000019
-  rotationSpeed: 300
+  rotationSpeed: 10
   positionOffset: {x: 0, y: 3.26999998, z: 0}
   planet: {fileID: 485402445}
 --- !u!4 &1270498536 stripped
