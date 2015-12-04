@@ -34,6 +34,11 @@ public class HealthManager : MonoBehaviour
         }
     }
 
+    public float healthNormalized
+    {
+        get { return health / maxHealth; }
+    }
+
     public delegate void notificationHandler();
     public event notificationHandler OnDeath;
     private bool notified;

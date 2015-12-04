@@ -361,7 +361,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLimit: 9.99999987e+14
   goalScore: 0
-  state: 2
 --- !u!4 &1247722553
 Transform:
   m_ObjectHideFlags: 0
@@ -511,7 +510,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 486810, guid: 36fcff4353279a540aa8008805b544df, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.79999995
+      value: 6.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 486810, guid: 36fcff4353279a540aa8008805b544df, type: 2}
       propertyPath: m_LocalPosition.y

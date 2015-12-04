@@ -10,9 +10,10 @@ public enum GameState
 
 public class GameManager : DestructiveSingleton<GameManager>
 {
-    void Start ()
+    IEnumerator Start ()
     {
         base.Start();
+        yield return null; //wait for all screen scripts to subscribe to OnStateChange and then call it
         SwitchState(GameState.StartScreen);
         OnStateChange += CheckForTimerReset;
     }
