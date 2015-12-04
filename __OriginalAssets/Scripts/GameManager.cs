@@ -1,15 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum State
+public enum GameState
 {
-    waitingToRandomize,
-    waitingToApply,
-    gameplay
+    StartScreen,
+    RandomizationScreen,
+    Gameplay
 }
 
 public class GameManager : DestructiveSingleton<GameManager>
 {
+    void Start ()
+    {
+        base.Start();
+        SwitchState(GameState.StartScreen);
+    }
+
+    private GameState state;
+
+    public void SwitchState(GameState newState)
+    {
+        NotifyStateChange(state, newState);
+    }
+
+    public delegate void StateHandler(GameState lastState, GameState newState);
+    public event StateHandler OnStateChange;
+
+    public void NotifyStateChange(GameState lastState, GameState newState)
+    {
+        state = newState;
+        if (OnStateChange != null)
+        {
+            OnStateChange(lastState, newState);
+        }
+    }
+
     public float timeLimit;
     private float _timer;
     private float timer
@@ -32,7 +57,7 @@ public class GameManager : DestructiveSingleton<GameManager>
 
     void Update ()
     {
-        if (state == State.gameplay)
+        if (state == GameState.Gameplay)
         {
             timer += Time.deltaTime;
             //Debug.Log(timer);
@@ -52,8 +77,6 @@ public class GameManager : DestructiveSingleton<GameManager>
         Debug.Log("player with the most points wins");
         EndLevel();
     }
-
-    public State state;
 
     public void EndLevel ()
     {

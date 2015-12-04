@@ -3,27 +3,20 @@ using System.Collections;
 
 public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
 {
-
-	void Start ()
-    {
-        base.Start();
-        SwitchToWaitingToRandomize();
-	}
-
     public void SwitchToWaitingToRandomize()
     {
         //show blank slots
-        GameManager.instance.state = State.waitingToRandomize;
+        GameManager.instance.SwitchState(GameState.WaitingToRandomize);
         Debug.Log("press R to randomize");
     }
 
     void Update ()
     {
-        if (GameManager.instance.state == State.waitingToRandomize)
+        if (GameManager.instance.state == GameState.WaitingToRandomize)
         {
             GetRandomizationInput();
         }
-        else if (GameManager.instance.state == State.waitingToApply)
+        else if (GameManager.instance.state == GameState.WaitingToApply)
         {
             GetRandomizationInput();
             GetConfirmationInput();
@@ -69,7 +62,7 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
 
     void SwitchToWaitingToApply ()
     {
-        GameManager.instance.state = State.waitingToApply;
+        GameManager.instance.state = GameState.WaitingToApply;
         Debug.Log("press A to apply or R to randomize again");
         //show ui button
     }
@@ -95,6 +88,6 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
     void SwitchToGameplay ()
     {
         GameManager.instance.ResetTimer();
-        GameManager.instance.state = State.gameplay;
+        GameManager.instance.state = GameState.Gameplay;
     }
 }
