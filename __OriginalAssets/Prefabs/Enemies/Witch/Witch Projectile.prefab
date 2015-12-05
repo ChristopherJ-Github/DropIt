@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80feaef2e96b1aa4691ff68fb85e0cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 34
   shooter: Enemy
   particles: {fileID: 0}
 --- !u!114 &11422438
@@ -1253,7 +1253,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: damage
-      value: 1
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: shooter

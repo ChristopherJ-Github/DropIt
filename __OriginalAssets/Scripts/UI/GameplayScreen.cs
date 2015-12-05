@@ -3,18 +3,15 @@ using System.Collections;
 
 public class GameplayScreen : DestructiveSingleton<GameplayScreen>
 {
-
     private enum State { Enabled, Disabled };
     private State state;
     private Canvas canvas;
-    private bool started;
 
     void Start()
     {
         base.Start();
         if (instance == this)
         {
-            started = true;
             GameManager.instance.OnStateChange += UpdateState;
             canvas = GetComponent<Canvas>();
         }

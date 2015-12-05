@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
 {
-    enum State { Disabled, WaitingToRandomize, WaitingToApply };
-    State state;
-    Canvas canvas;
+    private enum State { Disabled, WaitingToRandomize, WaitingToApply };
+    private State state;
+    private Canvas canvas;
 
     void Start()
     {
@@ -27,7 +28,7 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
     {
         if (newState == GameState.RandomizationScreen)
         {
-            SwitchToWaitingToRandomize();
+            StartCoroutine(SwitchToWaitingToRandomize());
         }
         else
         {
@@ -35,29 +36,48 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
         }
     }
 
-    void SwitchToWaitingToRandomize()
+    public GameObject randomizedSentence;
+
+    IEnumerator SwitchToWaitingToRandomize()
     {
         canvas.enabled = true;
+        randomizedSentence.SetActive(false);
+        yield return null; //wait until a frame has passed since the last button press
         state = State.WaitingToRandomize;
-        Debug.Log("press R to randomize");
     }
 
     void Update ()
     {
+        UpdateButtonImage();
         if (state == State.WaitingToRandomize)
         {
             GetRandomizationInput();
         }
         else if (state == State.WaitingToApply)
         {
-            GetRandomizationInput();
             GetConfirmationInput();
         }
 	}
 
+    public Image button;
+    public Sprite buttonState1;
+    public Sprite buttonState2;
+
+    void UpdateButtonImage()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            button.sprite = buttonState2;
+        }
+        else
+        {
+            button.sprite = buttonState1;
+        }
+    }
+
     void GetRandomizationInput()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyUp(KeyCode.A))
         {
             RandomizeLevel();
             SwitchToWaitingToApply();
@@ -83,25 +103,29 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
         dropable = dropables[dropableIndex];
         int planetIndex = Random.Range(0, planets.Length);
         planet = planets[planetIndex];
-        UpdateUISlots();
-        Debug.Log("level randomized: " + character.name + ", " + dropable.name + ", " + planet.name);
+        UpdateUISlots(character.name, dropable.name, planet.name);
     }
 
-    void UpdateUISlots()
-    {
+    public Text characterText;
+    public Text dropableText;
+    public Text planetText;
 
+    void UpdateUISlots(string characterName, string dropableName, string planetName)
+    {
+        characterText.text = characterName;
+        dropableText.text = dropableName;
+        planetText.text = planetName;
     }
 
     void SwitchToWaitingToApply ()
     {
         state = State.WaitingToApply;
-        Debug.Log("press A to apply or R to randomize again");
-        //show ui button
+        randomizedSentence.SetActive(true);
     }
 
     void GetConfirmationInput ()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.A))
         {
             StartCoroutine(ApplyLevel());
         }
@@ -114,6 +138,5 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
         PlayerManager.instance.SetCharacter(character);
         PlayerManager.instance.dropable = dropable;
         GameManager.instance.SwitchState(GameState.Gameplay);
-        Debug.Log("level applied");
     }
 }

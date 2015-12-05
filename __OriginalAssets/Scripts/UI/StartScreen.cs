@@ -7,14 +7,12 @@ public class StartScreen : DestructiveSingleton<StartScreen>
     private enum State { Enabled, Disabled };
     private State state;
     private Canvas canvas;
-    private bool started;
 
     void Start ()
     {
         base.Start();
         if (instance == this)
         {
-            started = true;
             GameManager.instance.OnStateChange += UpdateState;
             canvas = GetComponent<Canvas>();
         } 
@@ -54,14 +52,7 @@ public class StartScreen : DestructiveSingleton<StartScreen>
 
     void GetStartInput()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            ChangeButtonImage(true);
-        } 
-        else
-        {
-            ChangeButtonImage(false);
-        }
+        UpdateButtonImage();
         if (Input.GetKeyUp(KeyCode.A))
         {
             GameManager.instance.SwitchState(GameState.RandomizationScreen);
@@ -72,9 +63,9 @@ public class StartScreen : DestructiveSingleton<StartScreen>
     public Sprite buttonState1;
     public Sprite buttonState2;
 
-    void ChangeButtonImage(bool pressed)
+    void UpdateButtonImage ()
     {
-        if (pressed)
+        if (Input.GetKey(KeyCode.A))
         {
             button.sprite = buttonState2;
         }

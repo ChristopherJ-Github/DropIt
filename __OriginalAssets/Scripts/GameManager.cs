@@ -5,7 +5,8 @@ public enum GameState
 {
     StartScreen,
     RandomizationScreen,
-    Gameplay
+    Gameplay,
+    GameOver
 }
 
 public class GameManager : DestructiveSingleton<GameManager>
@@ -87,9 +88,6 @@ public class GameManager : DestructiveSingleton<GameManager>
         goalScore = 0;
         Application.LoadLevel("Menu");
         Destroy(PlayerManager.instance.currentCharacter);
-        if (LevelRandomizer.instance != null)
-        { //used when the game is properly started from the menu. Otherwise there won't be a LevelRandomizer.
-            SwitchState(GameState.RandomizationScreen);
-        }
+        SwitchState(GameState.GameOver);
     }
 }
