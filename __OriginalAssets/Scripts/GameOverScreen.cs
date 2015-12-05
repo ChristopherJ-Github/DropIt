@@ -40,8 +40,35 @@ public class GameOverScreen : DestructiveSingleton<GameOverScreen>
     {
         canvas.enabled = true;
         state = State.ShowingResults;
+        SetScore();
         //animation
         state = State.WaitingToReplay;
+    }
+
+    public Text objectiveText;
+    public Text objectiveScore;
+    public Text timeText;
+    public Text timeScore;
+    public Text healthText;
+    public Text healthScore;
+    public Text totalScore;
+
+    void SetScore ()
+    {
+        int score = (int)GameManager.instance.score;
+        objectiveText.text = "Objectives X " + score.ToString();
+        int _objectiveScore = score * 20;
+        objectiveScore.text = _objectiveScore.ToString("D3");
+        int totalSeconds = (int)GameManager.instance.timeLeft;
+        int seconds = totalSeconds % 60;
+        int minutes = totalSeconds / 60;
+        timeText.text = minutes.ToString("D2") + ":" + seconds.ToString("D2");
+        int _timeScore = totalSeconds;
+        timeScore.text = totalSeconds.ToString("D3");
+        int _healthScore = (int)GameManager.instance.health;
+        healthScore.text = _healthScore.ToString("D3");
+        int _totalScore = _objectiveScore + _timeScore + _healthScore;
+        totalScore.text = _totalScore.ToString("D3");
     }
 
     void Update ()

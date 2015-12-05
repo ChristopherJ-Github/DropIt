@@ -10,6 +10,7 @@ public class Dropper : MonoBehaviour
     {
         dropable = PlayerManager.instance.dropable.prefab;
         scoreManager = GetComponent<ScoreManager>();
+        scoreManager.score = 0;
         UpdateDropSize();
     }
 

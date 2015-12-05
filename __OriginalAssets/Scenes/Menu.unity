@@ -103,7 +103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &44971245
 RectTransform:
   m_ObjectHideFlags: 0
@@ -324,6 +324,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc4da3d14c4d87479e7912870c75ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectiveText: {fileID: 833464709}
+  objectiveScore: {fileID: 212902764}
+  timeText: {fileID: 1210626892}
+  timeScore: {fileID: 273550458}
+  healthText: {fileID: 1219414892}
+  healthScore: {fileID: 1856749638}
+  totalScore: {fileID: 1559533315}
   button: {fileID: 1615571933}
   buttonState1: {fileID: 21300000, guid: 637d6a7191daa4942828fe30321cc935, type: 3}
   buttonState2: {fileID: 21300000, guid: 18224be5a1e497043846b87062924266, type: 3}
@@ -831,6 +838,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLimit: 20
   goalScore: 0
+  score: 0
+  health: 0
 --- !u!4 &768935094
 Transform:
   m_ObjectHideFlags: 0
@@ -1289,7 +1298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1139963637
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1952,7 +1961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1534454673
 RectTransform:
   m_ObjectHideFlags: 0

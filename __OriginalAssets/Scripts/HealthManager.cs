@@ -26,7 +26,7 @@ public class HealthManager : MonoBehaviour
         {
             value = (int)Mathf.Clamp(value, 0, maxHealth);
             _health = value;
-            //Debug.Log(_health);
+            GameManager.instance.health = _health; //save for game over screen
             if (_health == 0)
             {
                 NotifyDeath();

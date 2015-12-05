@@ -47,7 +47,7 @@ public class GameManager : DestructiveSingleton<GameManager>
 
     public float timeLimit;
     private float _timer;
-    private float timer
+    public float timer
     {
         get { return _timer; }
         set
@@ -89,5 +89,12 @@ public class GameManager : DestructiveSingleton<GameManager>
         Application.LoadLevel("Menu");
         Destroy(PlayerManager.instance.currentCharacter);
         SwitchState(GameState.GameOver);
+    }
+
+    [HideInInspector] public float score;
+    [HideInInspector] public float health;
+    public float timeLeft
+    {
+        get { return timeLimit - timer; }
     }
 }
