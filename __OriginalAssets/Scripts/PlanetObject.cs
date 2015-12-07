@@ -4,6 +4,7 @@ using System.Collections;
 public class PlanetObject : Singleton<PlanetObject>
 {
     public float gravity;
+    public Transform spawnPoint;
 
     public void Attract (Transform _transform, Rigidbody _rigibody, bool attract = true, bool rotate = true)
     {

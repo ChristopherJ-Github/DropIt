@@ -10,6 +10,10 @@ public class ScoreManager : MonoBehaviour
         set
         {
             GameManager gameManager = GameManager.instance;
+            if (value > _score)
+            {
+                PlayIncreaseSound();
+            }
             if (value >= gameManager.goalScore)
             {
                 _score = gameManager.goalScore;
@@ -22,5 +26,12 @@ public class ScoreManager : MonoBehaviour
                 gameManager.score = _score;
             }
         }
+    }
+
+    public AudioClip increaseSound;
+
+    void PlayIncreaseSound ()
+    {
+        AudioManager.instance.Play(increaseSound, Vector3.zero, 1, 1, 1, false);
     }
 }

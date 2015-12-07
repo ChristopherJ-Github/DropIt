@@ -87,8 +87,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.79999995, y: 2.5, z: -22.6000004}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.5999999, y: 2.5, z: -22.6000004}
+  m_LocalScale: {x: .697533011, y: .697533011, z: .697533011}
   m_Children:
   - {fileID: 476334}
   m_Father: {fileID: 0}
@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3954a35602abacb41add2a8bc4161d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  increaseSound: {fileID: 8300000, guid: 2c789978958787a4781146a5c20b50e7, type: 3}
 --- !u!114 &11461184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,9 +273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ab97bbbb503034b8da1442f2dcf0e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  rotationSpeed: 2
-  flyHeight: 2.77999997
+  moveSpeed: 5.05000019
+  rotationSpeed: .519999981
+  flyHeight: 4.23999977
   mask:
     serializedVersion: 2
     m_Bits: 1024
@@ -302,6 +303,10 @@ Prefab:
       propertyPath: rotationSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: increaseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c789978958787a4781146a5c20b50e7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 101988}

@@ -73,13 +73,11 @@ public class GameManager : DestructiveSingleton<GameManager>
 
     public void EndLevelGoalReached (ScoreManager winner)
     {
-        Debug.Log(winner.gameObject + " wins");
         EndLevel();
     }
 
     void EndLevelTimeOut ()
     {
-        Debug.Log("player with the most points wins");
         EndLevel();
     }
 
@@ -91,6 +89,9 @@ public class GameManager : DestructiveSingleton<GameManager>
         SwitchState(GameState.GameOver);
     }
 
+    public GameObject targetEffect;
+    public GameObject successfullDropEffect;
+    public GameObject splashEffect;
     [HideInInspector] public float score;
     [HideInInspector] public float health;
     public float timeLeft

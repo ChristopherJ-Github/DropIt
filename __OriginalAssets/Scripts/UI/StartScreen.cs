@@ -50,11 +50,14 @@ public class StartScreen : DestructiveSingleton<StartScreen>
         } 
     }
 
+    public AudioClip startSound;
+
     void GetStartInput()
     {
         UpdateButtonImage();
-        if (Input.GetKeyUp(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetButtonUp("Fire1"))
         {
+            AudioManager.instance.Play(startSound, Vector3.zero, 1, 1, 1, false);
             GameManager.instance.SwitchState(GameState.RandomizationScreen);
         }
     }
@@ -65,7 +68,7 @@ public class StartScreen : DestructiveSingleton<StartScreen>
 
     void UpdateButtonImage ()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetButton("Fire1"))
         {
             button.sprite = buttonState2;
         }

@@ -40,9 +40,8 @@ public class GameOverScreen : DestructiveSingleton<GameOverScreen>
     {
         canvas.enabled = true;
         state = State.ShowingResults;
-        SetScore();
+        StartCoroutine(SetScore());
         //animation
-        state = State.WaitingToReplay;
     }
 
     public Text objectiveText;
@@ -52,23 +51,81 @@ public class GameOverScreen : DestructiveSingleton<GameOverScreen>
     public Text healthText;
     public Text healthScore;
     public Text totalScore;
+    public float animationSpeed;
+    public AudioClip increaseSound;
 
-    void SetScore ()
+    IEnumerator SetScore()
     {
-        int score = (int)GameManager.instance.score;
-        objectiveText.text = "Objectives X " + score.ToString();
-        int _objectiveScore = score * 20;
-        objectiveScore.text = _objectiveScore.ToString("D3");
+        DisableAllText();
+
+        objectiveText.enabled = true;
+        float score = GameManager.instance.score;     
+        objectiveText.text = "Objectives X " + ((int)score).ToString();
+        objectiveScore.enabled = true;
+        float _objectiveScore = score * 20;
+        float _currentObjectiveScore = 0;
+        do
+        {
+            _currentObjectiveScore = Mathf.MoveTowards(_currentObjectiveScore, _objectiveScore, animationSpeed * Time.deltaTime);
+            objectiveScore.text = ((int)_currentObjectiveScore).ToString("D3");
+            AudioManager.instance.Play(increaseSound, Vector3.zero, 1, 1, 1, false);
+            yield return null;
+        }
+        while (_currentObjectiveScore != _objectiveScore);
+
+        timeText.enabled = true;
         int totalSeconds = (int)GameManager.instance.timeLeft;
         int seconds = totalSeconds % 60;
         int minutes = totalSeconds / 60;
         timeText.text = minutes.ToString("D2") + ":" + seconds.ToString("D2");
-        int _timeScore = totalSeconds;
-        timeScore.text = totalSeconds.ToString("D3");
-        int _healthScore = (int)GameManager.instance.health;
-        healthScore.text = _healthScore.ToString("D3");
-        int _totalScore = _objectiveScore + _timeScore + _healthScore;
-        totalScore.text = _totalScore.ToString("D3");
+        timeScore.enabled = true;
+        float _timeScore = totalSeconds;
+        float _currentTimeScore = 0;
+        do
+        {
+            _currentTimeScore = Mathf.MoveTowards(_currentTimeScore, _timeScore, animationSpeed * Time.deltaTime);
+            timeScore.text = ((int)_currentTimeScore).ToString("D3");
+            AudioManager.instance.Play(increaseSound, Vector3.zero, 1, 1, 1, false);
+            yield return null;
+        }
+        while (_currentTimeScore != _timeScore);
+
+        healthText.enabled = true;
+        healthScore.enabled = true;
+        float _healthScore = GameManager.instance.health;
+        float _currentHealthScore = 0;
+        do
+        {
+            _currentHealthScore = Mathf.MoveTowards(_currentHealthScore, _healthScore, animationSpeed * Time.deltaTime);
+            healthScore.text = ((int)_currentHealthScore).ToString("D3");
+            AudioManager.instance.Play(increaseSound, Vector3.zero, 1, 1, 1, false);
+            yield return null;
+        }
+        while (_currentHealthScore != _healthScore);
+
+        totalScore.enabled = true;
+        float _totalScore = _objectiveScore + _timeScore + _healthScore;
+        float _currentTotalScore = 0;
+        do
+        {
+            _currentTotalScore = Mathf.MoveTowards(_currentTotalScore, _totalScore, animationSpeed * Time.deltaTime);
+            totalScore.text = ((int)_currentTotalScore).ToString("D3");
+            AudioManager.instance.Play(increaseSound, Vector3.zero, 1, 1, 1, false);
+            yield return null;
+        }
+        while (_currentTotalScore != _totalScore);
+        state = State.WaitingToReplay;
+    }
+
+    void DisableAllText ()
+    {
+        objectiveText.enabled = false;
+        objectiveScore.enabled = false;
+        timeText.enabled = false;
+        timeScore.enabled = false;
+        healthText.enabled = false;
+        healthScore.enabled = false;
+        totalScore.enabled = false;
     }
 
     void Update ()
@@ -86,7 +143,7 @@ public class GameOverScreen : DestructiveSingleton<GameOverScreen>
 
     void UpdateButtonImage()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetButton("Fire1"))
         {
             button.sprite = buttonState2;
         }
@@ -98,7 +155,7 @@ public class GameOverScreen : DestructiveSingleton<GameOverScreen>
 
     void GetReplayInput ()
     {
-        if (Input.GetKeyUp(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetButtonUp("Fire1"))
         {
             GameManager.instance.SwitchState(GameState.RandomizationScreen);
         }

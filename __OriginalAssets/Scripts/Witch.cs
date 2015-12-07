@@ -10,7 +10,7 @@ public class Witch : MonoBehaviour
 
 	void Start ()
     {
-        InvokeRepeating("Attack", 2, 2);
+        InvokeRepeating("Attack", Random.Range(0f, 2f), 2);
         initLocalEuler = pivotTransform.localEulerAngles;
         newTransform = transform;
         planetTransform = PlanetObject.instance.transform;
@@ -19,6 +19,7 @@ public class Witch : MonoBehaviour
     public Transform spawnPoint;
     public GameObject projectile;
     public float shootForce;
+    public AudioClip attackSound;
 	
 	void Attack ()
     {
@@ -28,6 +29,7 @@ public class Witch : MonoBehaviour
         GameObject projectile = Instantiate(this.projectile, position, lookRotation) as GameObject;
         Rigidbody _rigidbody = projectile.GetComponent<Rigidbody>();
         _rigidbody.AddForce(direction * shootForce);
+        //AudioManager.instance.Play(attackSound, newTransform.position, 1, 1, 50, true);
     }
 
     public float rotateSpeed;
@@ -38,8 +40,8 @@ public class Witch : MonoBehaviour
         pivotTransform.LookAt(PlayerManager.instance.currentCharacter.transform);
         Vector3 localEuler = pivotTransform.localEulerAngles;
         Vector3 newEuler = initLocalEuler;
-        currentYRot = Mathf.MoveTowards(currentYRot, localEuler.y, rotateSpeed * Time.deltaTime);
-        newEuler.y = currentYRot;
+        currentYRot = Mathf.MoveTowards(currentYRot, localEuler.z, rotateSpeed * Time.deltaTime);
+        newEuler.z = currentYRot;
         //newEuler.y = localEuler.y;
         pivotTransform.localRotation = Quaternion.Euler(newEuler);
     }

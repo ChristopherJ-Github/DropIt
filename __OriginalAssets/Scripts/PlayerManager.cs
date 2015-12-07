@@ -13,7 +13,8 @@ public class PlayerManager : DestructiveSingleton<PlayerManager>
         {
             Destroy(playerController.gameObject);
         }
-        currentCharacter = Instantiate(character.prefab) as GameObject;
+        Transform spawnPoint = PlanetObject.instance.spawnPoint;
+        currentCharacter = Instantiate(character.prefab, spawnPoint.position, spawnPoint.rotation) as GameObject;
         CameraFollow.instance.toFollow = currentCharacter.transform;
         UpdateCharacterSize();
     }

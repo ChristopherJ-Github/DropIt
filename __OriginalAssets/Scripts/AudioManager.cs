@@ -69,7 +69,7 @@ public class AudioManager : Singleton<AudioManager>
     /// <param name="volume"></param>
     /// <param name="pitch"></param>
     /// <returns></returns>
-    public AudioSource Play(AudioClip clip, Vector3 point, float volume, float pitch, float range = 1)
+    public AudioSource Play(AudioClip clip, Vector3 point, float volume, float pitch, float range = 1, bool spatial = true)
     {
         //Create an empty game object
         GameObject go = new GameObject("Audio: " + clip.name);
@@ -81,6 +81,7 @@ public class AudioManager : Singleton<AudioManager>
         source.volume = volume;
         source.pitch = pitch;
         source.minDistance = range;
+        source.spatialBlend = spatial ? 1 : 0;
         source.Play();
         Destroy(go, clip.length);
         return source;

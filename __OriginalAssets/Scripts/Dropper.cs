@@ -26,7 +26,7 @@ public class Dropper : MonoBehaviour
 	
 	void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Fire1"))
         {
             Drop();
         }

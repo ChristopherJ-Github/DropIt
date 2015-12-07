@@ -65,7 +65,7 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
 
     void UpdateButtonImage()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetButton("Fire1"))
         {
             button.sprite = buttonState2;
         }
@@ -77,7 +77,7 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
 
     void GetRandomizationInput()
     {
-        if (Input.GetKeyUp(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetButtonUp("Fire1"))
         {
             RandomizeLevel();
             SwitchToWaitingToApply();
@@ -125,7 +125,7 @@ public class LevelRandomizer : DestructiveSingleton<LevelRandomizer>
 
     void GetConfirmationInput ()
     {
-        if (Input.GetKeyUp(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetButtonUp("Fire1"))
         {
             StartCoroutine(ApplyLevel());
         }
